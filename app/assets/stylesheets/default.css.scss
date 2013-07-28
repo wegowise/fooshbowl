@@ -1,0 +1,42 @@
+@import "bootstrap";
+
+body {
+  background: #285DA7;
+  color: #FFFFFF;
+  padding: 25px 0;
+}
+
+#wrap {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#crest {
+  width: 115px;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 5px 10px;
+}
+
+table .headings {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+tr:nth-child(odd) td {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#stats {
+  margin-top: 25px;
+}
+
+.new-game {
+  margin-top: 25px;
+}

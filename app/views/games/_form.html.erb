@@ -1,0 +1,33 @@
+<%= form_for(@game) do |f| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% @game.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :player1_id, "Player 1" %>
+    <%= f.select :player1_id, Player.all.map { |p| [p.name, p.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label :player2_id, "Player 2" %>
+    <%= f.select :player2_id, Player.all.map { |p| [p.name, p.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label :player1_score, "Player 1 Score" %>
+    <%= f.number_field :player1_score %>
+  </div>
+  <div class="field">
+    <%= f.label :player2_score, "Player 2 Score" %>
+    <%= f.number_field :player2_score %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn" %>
+  </div>
+<% end %>

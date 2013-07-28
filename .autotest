@@ -1,0 +1,4 @@
+Autotest.add_hook :initialize do |a|
+  a.add_exception /^\.git/
+  a.add_exception /^log/
+end

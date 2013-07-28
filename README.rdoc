@@ -1,0 +1,6 @@
+== fooshbowl
+
+Foosball score keeping app for WegoWise.
+
+Fooshbowl is Copyright © 2012-2013 WegoWise, Inc. It is free software, and may
+be redistributed under the terms specified in the LICENSE file.

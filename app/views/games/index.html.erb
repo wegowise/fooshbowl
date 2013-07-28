@@ -1,0 +1,21 @@
+<table id="stats">
+  <tr class="headings">
+    <th>Name</th>
+    <th>W%</th>
+    <th>Wins</th>
+    <th>GD</th>
+  </tr>
+
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= player.name %></td>
+        <td><%= player.winning_percentage %></td>
+        <td><%= player.wins %></td>
+        <td><%= player.goal_diff %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Add Game', new_game_path, class: "btn btn-medium new-game" %>
