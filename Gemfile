@@ -22,6 +22,7 @@ group :test do
   gem "rspec"
   gem "rspec-rails"
   gem "forge-factories"
+  gem 'shoulda'
 end
 
 group :production do
