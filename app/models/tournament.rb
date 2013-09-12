@@ -25,6 +25,20 @@ class Tournament < ActiveRecord::Base
     generate_games(tournament, game2, round-1, n_rounds)
   end
 
-  def assign_players (players)
+  # Create the Tournament with the correct number of games for the given
+  # players.
+  def self.create_with_players (players)
+    self.transaction do
+      tournament = Tournament.create(name: name)
+      n_rounds = Math.log2(players.count).ceil
+      games = []
+
+      (players.count - 2).downto(0) do |game_no|
+        round = n_rounds - Math.log2(players.count - game_no).ceil + 1
+        parent_game = games[games.count / 2]
+        games << tournament.games.create!(round: round, parent_game: parent_game)
+      end
+      tournament
+    end
   end
 end
