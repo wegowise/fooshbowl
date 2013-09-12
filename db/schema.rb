@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130911234013) do
+ActiveRecord::Schema.define(version: 20130912163523) do
 
   create_table "games", force: true do |t|
     t.integer  "player1_id"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20130911234013) do
     t.integer  "player2_score"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "type",          default: "Game"
+    t.string   "type",           default: "Game"
     t.integer  "round"
-    t.integer  "child_game_id"
+    t.integer  "parent_game_id"
     t.integer  "tournament_id"
     t.integer  "season_id"
   end
