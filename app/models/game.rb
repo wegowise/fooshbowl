@@ -2,7 +2,13 @@ class Game < ActiveRecord::Base
   belongs_to :player1, class_name: "Player"
   belongs_to :player2, class_name: "Player"
 
+  belongs_to :season
+
   default_scope { order(:created_at) }
+
+  validates :season_id, presence: true
+
+  before_validation :assign_season, if: -> { season_id.blank? }
 
   def goals_for(player)
     player1_id == player.id ? player1_score : player2_score
@@ -14,5 +20,11 @@ class Game < ActiveRecord::Base
 
   def win?(player)
     goals_for(player) > goals_against(player)
+  end
+
+  private
+
+  def assign_season
+    self.season = Season.current
   end
 end
