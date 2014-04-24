@@ -27,6 +27,6 @@ end
 
 group :production do
   gem 'pg'
-  gem "thin"
+  gem 'puma'
   gem 'rails_12factor'
 end
