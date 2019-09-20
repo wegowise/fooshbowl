@@ -3,8 +3,10 @@
 <table id="stats">
   <tr class="headings">
     <th>Name</th>
-    <th>W%</th>
+    <th>Games Played</th>
     <th>Wins</th>
+    <th>Losses</th>
+    <th>W%</th>
     <th>GD</th>
   </tr>
 
@@ -12,8 +14,10 @@
     <% @players.each do |player| %>
       <tr>
         <td><%= player.name %></td>
-        <td><%= player.winning_percentage %></td>
+        <td><%= player.games_played %></td>
         <td><%= player.wins %></td>
+        <td><%= player.losses %></td>
+        <td><%= player.winning_percentage %></td>
         <td><%= player.goal_diff %></td>
       </tr>
     <% end %>
