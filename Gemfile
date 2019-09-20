@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.3.7'
 
 gem 'rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -15,8 +15,7 @@ group :assets do
 end
 
 group :development, :test do
-  gem "debugger"
-  gem "sqlite3"
+  gem 'sqlite3', '~> 1.3.0'
 end
 
 group :test do
