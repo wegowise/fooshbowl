@@ -3,6 +3,10 @@ class Player < ActiveRecord::Base
     Game.where(Game.arel_table[:player1_id].eq(id).or(Game.arel_table[:player2_id].eq(id)))
   end
 
+  def games_played
+      wins + losses
+  end
+
   def wins
     games.select { |game| game.win?(self) }.size
   end
