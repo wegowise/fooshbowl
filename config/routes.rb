@@ -1,5 +1,6 @@
 Fooshbowl::Application.routes.draw do
-  root to: "games#index"
+  root to: "standings#index"
   resources :games
   resources :players
+  resources :standings, only: [:index]
 end
